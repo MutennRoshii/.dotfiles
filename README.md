@@ -82,7 +82,7 @@ sudo nala autopurge && sudo nala autoremove
 
 echo "Package: snapd
 Pin: release a=*
-Pin-Priority: -10" > /etc/apt/preferences.d/nosnap.pref
+Pin-Priority: -10" | sudo tee /etc/apt/preferences.d/nosnap.pref
 
 sudo nala install --install-suggests gnome-software
 ```
@@ -96,7 +96,7 @@ echo 'Unattended-Upgrade::Allowed-Origins:: "LP-PPA-mozillateam:${distro_codenam
 
 echo "Package: firefox*
 Pin: release o=LP-PPA-mozillateam
-Pin-Priority: 501" > /etc/apt/preferences.d/mozillateamppa
+Pin-Priority: 501" | sudo tee /etc/apt/preferences.d/mozillateamppa
 
 sudo apt update && sudo nala update
 sudo nala install -t 'o=LP-PPA-mozillateam' firefox
