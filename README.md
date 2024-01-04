@@ -2,14 +2,17 @@
 
 My personal dotfile repository for my linux desktop
 
-> OS: Ubuntu-23.10
+> OS: Ubuntu-23.10 <br>
+> DE: Gnome <br>
+> PM: Nala <br>
 
 ## Setup
 
-I use nala as my apt frontend
-
 ```bash
+cd
 sudo apt update && sudo apt install nala
+sudo nala install git
+git clone https://github.com/MutennRoshii/.dotfiles.git
 ```
 
 ### Installing config files
@@ -28,7 +31,7 @@ cp -rsf $dotfiles/.config/. ~/.config/
 ```bash
 
 sudo nala install alacritty build-essential cmake curl \
-fzf git gnome-software gnome-tweaks libbz2-dev libffi-dev \
+fzf gnome-software gnome-tweaks libbz2-dev libffi-dev \
 liblzma-dev libncurses-dev libreadline-dev libsqlite3-dev \
 libssl-dev  ibxml2-dev libxmlsec1-dev tk-dev zlib1g-dev
 ```
