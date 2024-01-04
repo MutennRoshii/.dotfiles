@@ -120,3 +120,18 @@ sudoedit /etc/bash.bashrc   # remove sudo hint
 sudoedit /etc/sudoers       # add `Defaults !admin_flag`
 rm ~/.sudo_as_admin_successful
 ```
+
+## Modified system files
+
+I will list all system files that have been modified or added in this README:
+
+| file                                                          | action |
+|---------------------------------------------------------------|--------|
+| /etc/apt/keyrings/charm.gpg                                   | added  |
+| /etc/apt/sources.list.d/charm.list                            | added  |
+| /etc/apt/sources.list.d/mozillateam-ubuntu-ppa-mantic.sources | added  |
+| /etc/sudoers                                                  | edited |
+| /etc/bash.bashrc                                              | edited |
+| /etc/apt/preferences.d/nosnap.pref                            | added  |
+| /etc/apt/preferences.d/mozillateamppa                         | added  |
+| /etc/apt/apt.conf.d/51unattended-upgrades-firefox             | added  |
