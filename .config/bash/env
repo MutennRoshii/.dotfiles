@@ -1,0 +1,27 @@
+#
+# ~/.config/bash/env
+#
+
+# XDG directories
+export XDG_CONFIG_HOME="$HOME/.config"
+export XDG_CACHE_HOME="$HOME/.cache"
+export XDG_DATA_HOME="$HOME/.local/share"
+export XDG_STATE_HOME="$HOME/.local/state"
+
+# rust
+export RUSTC_WRAPPER="sccache"
+export RUSTUP_HOME="$XDG_DATA_HOME/rustup"
+export CARGO_HOME="$XDG_DATA_HOME/cargo"
+
+# ninja
+export HISTFILE="$XDG_STATE_HOME/bash/history"
+export LESSHISTFILE="$XDG_STATE_HOME/less/history"
+
+export PATH="\
+$XDG_DATA_HOME/bob/nvim-bin\
+:$XDG_DATA_HOME/mise/shims\
+:$PATH"
+
+export EDITOR="$XDG_DATA_HOME/bob/nvim-bin/nvim"
+export TERMINAL="alacritty"
+export BROWSER="firefox"

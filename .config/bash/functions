@@ -1,0 +1,22 @@
+#!/bin/bash
+# ~/.config/bash/functions
+
+function shopt () { 
+
+  if [ $# -ne 0 ]; then
+    command shopt "$@";
+    return $?;
+  fi;
+
+  local output=$(command shopt | column -t;);
+  output=$(echo "$output" | sed -E "s/(on$)/$(tput setaf 2)\1$(tput sgr0)/g");
+  output=$(echo "$output" | sed -E "s/(off$)/$(tput setaf 1)\1$(tput sgr0)/g");
+  echo "$output";
+}
+
+function path () {
+  echo $PATH \
+    | awk -v RS=: '{print $0}' \
+    | sort \
+    | perl -e 'print sort {($a =~ tr{/}{/}) <=> ($b =~ tr{/}{/})} <>'
+}
