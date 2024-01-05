@@ -131,16 +131,6 @@ rm ~/.sudo_as_admin_successful
 ```bash
 cd ~/Downloads 
 
-curl -s 'https://api.github.com/repos/be5invis/Iosevka/releases/latest' \
-| jq -r ".assets[] | .browser_download_url" \
-| grep -E -i "ttf-iosevka-" \
-| xargs -n 1 curl -LO --fail --silent --show-error
-
-unzip ./*.zip
-rm ./*.zip ./*.txt ./*.md
-mkdir Iosevka
-mv ./*.ttf ./Iosevka/
-
 curl -s 'https://api.github.com/repos/ryanoasis/nerd-fonts/releases/latest' \
 | jq -r ".assets[] | .browser_download_url" \
 | grep -E -i "jetbrainsmono.*\.zip" \
@@ -149,10 +139,9 @@ curl -s 'https://api.github.com/repos/ryanoasis/nerd-fonts/releases/latest' \
 unzip ./*.zip
 rm ./*.zip ./*.txt ./*.md
 rm ./*Propo-*.ttf ./*Mono-*.ttf ./*NL*.ttf
-mkdir JetBrainsMonoNerdFont
-mv ./*.ttf ./JetBrainsMonoNerdFont/
+mkdir 'JetBrainsMono Nerd Font'
+mv ./*.ttf ./'JetBrainsMono Nerd Font'/
 
-sudo mv ./Iosevka/ /usr/share/fonts/
 sudo mv ./JetBrainsMonoNerdFont/ /usr/share/fonts/
 ```
 
