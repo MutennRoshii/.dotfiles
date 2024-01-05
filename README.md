@@ -174,6 +174,7 @@ I will list all system files that have been modified or added in this README:
 | file                                                          | action |
 |---------------------------------------------------------------|--------|
 | /etc/sudoers                                                  | edited |
+| /etc/default/grub                                             | edited |
 | /etc/bash.bashrc                                              | edited |
 | /etc/apt/keyrings/charm.gpg                                   | added  |
 | /etc/apt/sources.list.d/charm.list                            | added  |
