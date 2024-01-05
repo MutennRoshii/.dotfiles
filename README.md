@@ -158,6 +158,8 @@ sudo mv ./JetBrainsMonoNerdFont/ /usr/share/fonts/
 
 ### Grub
 
+> Don't change grub font. When gpu isn't loaded yet, the fonts don't render very well.
+
 ```bash
 sudo grub-mkfont -s 18 -o /boot/grub/iosevka-18.pf2 /usr/share/fonts/Iosevka/Iosevka-Regular.ttf
 
