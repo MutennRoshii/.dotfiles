@@ -1,6 +1,5 @@
-#
+#!/bin/bash
 # ~/.config/bash/env
-#
 
 # XDG directories
 export XDG_CONFIG_HOME="$HOME/.config"

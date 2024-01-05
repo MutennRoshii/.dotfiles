@@ -1,4 +1,5 @@
 #!/bin/bash
+# ~/.config/bash/aliases
 
 alias    l="eza       --group-directories-first --git"
 alias   ls="eza -lah  --icons --group-directories-first --git"
