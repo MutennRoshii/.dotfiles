@@ -1,6 +1,6 @@
 [tools]
-node = "20"
-python = "3.12"
-java = "21"
-maven = "3.9.6"
-gradle = "8.5"
+node = "latest"
+python = "latest"
+java = "latest"
+maven = "latest"
+gradle = "latest"
