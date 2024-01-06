@@ -1,27 +1,41 @@
 general {
+        output_format = "i3bar"
         colors = true
         interval = 5
+        color_good = "#689d6a"
+        color_degraded = "#d65d0e"
+        color_bad = "#cc241d"
+        markup = "pango"
 }
 
-order += "battery all"
 order += "disk /"
 order += "memory"
+order += "battery all"
 order += "tztime local"
 
 battery all {
         format = "%status %percentage"
+        format = "<span color='#83c07c'><span size='large'>%status</span>%percentage</span>"
+        format_down = " "
+        status_chr = "󰚥 "
+        status_bat = " "
+        status_unk = " "
+        status_full = " "
+        low_threshold = 10
+        last_full_capacity = true
+
 }
 
 disk "/" {
-        format = "%avail"
+        format = "<span color='#d3869b'><span size='large'> </span>%avail</span>"
 }
 
 memory {
-        format = "%used"
+        format = "<span color='#83a598'><span size='large'> </span>%used</span>"
         threshold_degraded = "1G"
         format_degraded = "MEMORY < %available"
 }
 
 tztime local {
-        format = "%d/%m/%y %H:%M"
+        format = "<span color='#fabd2f'><span size='large'> </span>%d/%m %H:%M</span>"
 }

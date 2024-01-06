@@ -158,6 +158,14 @@ echo "GRUB_FONT=/boot/grub/iosevka-18.pf2" | sudo tee -a /etc/default/grub
 sudo grub-mkconfig -o /boot/efi/EFI/ubuntu/grub.cfg
 ```
 
+### Icons
+
+```bash
+sudo add-apt-repository ppa:papirus/papirus
+sudo apt update && sudo nala update
+sudo nala install papirus-icon-theme
+```
+
 ## Modified system files
 
 I will list all system files that have been modified or added in this README:
