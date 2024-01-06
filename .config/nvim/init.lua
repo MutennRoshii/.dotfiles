@@ -202,6 +202,9 @@ require('lazy').setup({
         build = ':TSUpdate',
     },
 
+    {
+        'brenoprata10/nvim-highlight-colors',
+    },
     -- Add/Configure additional "plugins" for kickstart
     require 'kickstart.plugins.autoformat',
     -- require 'kickstart.plugins.debug',
@@ -254,7 +257,9 @@ vim.o.completeopt = 'menuone,noselect'
 
 -- NOTE: You should make sure your terminal supports this
 vim.o.termguicolors = true
+vim.o.t_Co = 256
 
+require("nvim-highlight-colors").setup({})
 -- [[ Basic Keymaps ]]
 
 -- Keymaps for better default experience

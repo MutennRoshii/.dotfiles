@@ -15,6 +15,7 @@ export CARGO_HOME="$XDG_DATA_HOME/cargo"
 # ninja
 export HISTFILE="$XDG_STATE_HOME/bash/history"
 export LESSHISTFILE="$XDG_STATE_HOME/less/history"
+export GTK2_RC_FILES="$XDG_CONFIG_HOME/gtk-2.0/gtkrc"
 
 export PATH="\
 $XDG_DATA_HOME/bob/nvim-bin\

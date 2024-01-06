@@ -1,0 +1,20 @@
+[global]
+frame_color = "#ebdbb2"
+separator_color= frame
+highlight = "#a89984"
+font = "JetBrainsMono Nerd Font 10"
+frame_width = 2
+icon_theme = "Papirus Dark"
+
+[urgency_low]
+background = "#282828"
+foreground = "#a89984"
+
+[urgency_normal]
+background = "#282828"
+foreground = "#a89984"
+
+[urgency_critical]
+background = "#282828"
+foreground = "#a89984"
+frame_color = "#fb4934"
