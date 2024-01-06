@@ -30,10 +30,7 @@ cp -rsf $dotfiles/.config/. ~/.config/
 
 ```bash
 
-sudo nala install alacritty build-essential cmake curl \
-fzf gnome-software gnome-tweaks libbz2-dev libffi-dev \
-liblzma-dev libncurses-dev libreadline-dev libsqlite3-dev \
-libssl-dev  ibxml2-dev libxmlsec1-dev tk-dev zlib1g-dev
+sudo nala install alacritty blueman build-essential cmake curl fzf git gnome-software gnome-tweaks i3 libbz2-dev libffi-dev liblzma-dev libncurses-dev libreadline-dev libsqlite3-dev libssl-dev libxml2-dev libxmlsec1-dev lxappearance nitrogen papirus-icon-theme pasystray rofi tk-dev zlib1g-dev
 ```
 
 ### Installing lovely rust tools
@@ -43,7 +40,7 @@ curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
 
 cargo install sccache
 
-RUSTC_WRAPPER=sccache cargo install mise bob-nvim cargo-info du-dust eza fd-find ripgrep sccache starship
+RUSTC_WRAPPER=sccache cargo install mise bob-nvim cargo-info du-dust eza fd-find ripgrep sccache starship tealdeer
 ```
 
 ### Installing tools with mise & bob
