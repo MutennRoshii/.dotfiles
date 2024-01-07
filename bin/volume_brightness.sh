@@ -106,13 +106,13 @@ case $1 in
 
     brightness_up)
     # Increases brightness and displays the notification
-    brightnessctl set +2%
+    brightnessctl set +2% -n 1
     brightness_notification
     ;;
 
     brightness_down)
     # Decreases brightness and displays the notification
-    brightnessctl set 2%-
+    brightnessctl set 2%- -n 1
     brightness_notification
     ;;
 esac

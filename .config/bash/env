@@ -22,6 +22,9 @@ $XDG_DATA_HOME/bob/nvim-bin\
 :$XDG_DATA_HOME/mise/shims\
 :$PATH"
 
+export MANPAGER="sh -c 'col -bx | bat -l man -p'"
 export EDITOR="$XDG_DATA_HOME/bob/nvim-bin/nvim"
 export TERMINAL="alacritty"
 export BROWSER="firefox"
+
+export GTK_THEME="Yaru"
