@@ -1,12 +1,16 @@
 [global]
+font = "JetBrainsMono Nerd Font 13"
+allow_markup = yes
+markup = full
+format = "<b>%s</b>\n%b"
 frame_color = "#ebdbb2"
-separator_color= frame
 highlight = "#a89984"
-font = "JetBrainsMono Nerd Font 10"
+separator_color= frame
 frame_width = 2
 icon_theme = "Papirus-Dark"
 follow = keyboard
-markup = full
+alignment = center
+vertical_alignment = center
 
 [urgency_low]
 background = "#282828"

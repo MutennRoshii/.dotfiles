@@ -27,13 +27,13 @@ function get_volume_icon {
     volume=$(get_volume)
     mute=$(get_mute)
     if [ "$mute" == "yes" ]; then
-        volume_icon="󰝟"
+        volume_icon="󰖁"
     elif [ "$volume" -eq 0 ]; then
-        volume_icon="󰕿"
+        volume_icon=""
     elif [ "$volume" -lt 50 ]; then
-        volume_icon="󰖀"
+        volume_icon=""
     else
-        volume_icon="󰕾"
+        volume_icon=""
     fi
 }
 
