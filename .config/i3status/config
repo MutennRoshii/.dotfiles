@@ -10,7 +10,7 @@ general {
 
 order += "disk /"
 order += "memory"
-order += "battery all"
+#order += "battery all"
 order += "tztime local"
 
 battery all {

@@ -10,6 +10,7 @@ exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork -i $locks
 exec --no-startup-id nitrogen --restore &
 exec --no-startup-id nm-applet &
 exec --no-startup-id blueman-applet &
+exec --no-startup-id cbatticon -l 20 -r 10 -c "systemctl suspend"  &
 
 set $refresh_i3status killall -SIGUSR1 i3status
 bindsym XF86AudioRaiseVolume  exec --no-startup-id volume_brightness.sh volume_up       && $refresh_i3status
