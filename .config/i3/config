@@ -2,8 +2,9 @@ set $mod Mod4
 
 font pango:JetBrainsMono Nerd Font Bold 10
 
+set $lockscreen_image ~/Pictures/backgrounds/Ubuntu_Lock.png
 exec --no-startup-id dex --autostart --environment i3
-exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
+exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork -i $lockscreen_image
 
 #exec --no-startup-id gnome-settings-daemon
 exec --no-startup-id nitrogen --restore &
