@@ -17,7 +17,7 @@ battery all {
         format = "%status %percentage"
         format = "<span color='#83c07c'><span size='large'>%status</span>%percentage</span>"
         format_down = " "
-        status_chr = "󰚥 "
+        status_chr = "󰂊 "
         status_bat = " "
         status_unk = " "
         status_full = " "

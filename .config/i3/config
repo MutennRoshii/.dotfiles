@@ -169,8 +169,8 @@ bar {
                 urgent_workspace   #fb4934 #fb4934 #ebdbb2
                 binding_mode       #fb4934 #fb4934 #ebdbb2
         }
-        padding 3px 0
+        padding 2px 0
         tray_output primary
-        tray_padding 3px
+        tray_padding 2px
         workspace_min_width 40
 }

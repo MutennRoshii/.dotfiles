@@ -27,4 +27,4 @@ export EDITOR="$XDG_DATA_HOME/bob/nvim-bin/nvim"
 export TERMINAL="alacritty"
 export BROWSER="firefox"
 
-export GTK_THEME="Yaru"
+export GTK_THEME="Yaru-bark-dark"
