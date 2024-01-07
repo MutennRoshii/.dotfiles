@@ -230,8 +230,6 @@ vim.opt.shiftwidth = 4
 vim.opt.expandtab = true
 vim.opt.smartindent = true
 
-vim.o.colorcolumn = "120"
-
 -- Sync clipboard between OS and Neovim.
 vim.o.clipboard = 'unnamedplus'
 
