@@ -6,7 +6,7 @@ set $lockscreen_image ~/Pictures/backgrounds/Ubuntu_Lock.png
 exec --no-startup-id dex --autostart --environment i3
 exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork -i $lockscreen_image
 
-#exec --no-startup-id gnome-settings-daemon
+exec --no-startup-id xsettingsd &
 exec --no-startup-id nitrogen --restore &
 exec --no-startup-id nm-applet &
 exec --no-startup-id blueman-applet &
@@ -24,15 +24,13 @@ bindsym XF86MonBrightnessDown exec --no-startup-id volume_brightness.sh brightne
 floating_modifier $mod
 tiling_drag modifier titlebar
 
-# start a terminal
+# launch commands
+bindsym $mod+space exec --no-startup-id "rofi -modi drun,run -show drun"
 bindsym $mod+Return     exec i3-sensible-terminal
 bindsym $mod+b          exec firefox
 
 # kill focused window
 bindsym $mod+w kill
-
-# bindsym $mod+d exec --no-startup-id dmenu_run
-bindsym $mod+d exec --no-startup-id "rofi -modi drun,run -show drun"
 
 # change focus
 bindsym $mod+j focus left
@@ -84,10 +82,9 @@ bindsym $mod+r layout stacking
 bindsym $mod+t layout tabbed
 
 # toggle tiling / floating
-bindsym $mod+Shift+space floating toggle
+bindsym $mod+Shift+f floating toggle
 # change focus between tiling / floating windows
-bindsym $mod+space focus mode_toggle
-
+bindsym $mod+Tab focus mode_toggle
 # focus the parent container
 bindsym $mod+a focus parent
 
@@ -114,6 +111,7 @@ bindsym $mod+7 workspace number $ws7
 bindsym $mod+8 workspace number $ws8
 bindsym $mod+9 workspace number $ws9
 bindsym $mod+0 workspace number $ws10
+bindsym $mod+minus scratchpad show
 
 # move focused container to workspace
 bindsym $mod+Shift+1 move container to workspace number $ws1
@@ -126,6 +124,7 @@ bindsym $mod+Shift+7 move container to workspace number $ws7
 bindsym $mod+Shift+8 move container to workspace number $ws8
 bindsym $mod+Shift+9 move container to workspace number $ws9
 bindsym $mod+Shift+0 move container to workspace number $ws10
+bindsym $mod+Shift+minus move scratchpad
 
 bindsym $mod+Shift+c reload
 bindsym $mod+Shift+r restart
