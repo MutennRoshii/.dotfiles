@@ -1,19 +1,25 @@
 set $mod Mod4
 
 # [[ AUTOSTART ]]
+# system
 set $lockscreen_image ~/Pictures/backgrounds/Ubuntu_Lock.png
 exec --no-startup-id dex --autostart --environment i3
 exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork -i $lockscreen_image
 
+# util
 exec --no-startup-id xsettingsd &
 exec --no-startup-id nitrogen --restore &
 exec --no-startup-id nm-applet &
 #exec --no-startup-id blueman-applet &
 exec --no-startup-id cbatticon -l 20 -r 10 -c "systemctl suspend"  &
 
+# apps
 exec flatpak run com.bitwarden.desktop
 for_window [class="Bitwarden"] , move scratchpad
 bindsym $mod+p [class="Bitwarden"] scratchpad show
+
+# [[ WINDOW RULES ]]
+for_window [class="gnome-calculator"] floating enable
 
 # [[ SYS KEYBINDS ]]
 set $refresh_i3status killall -SIGUSR1 i3status
