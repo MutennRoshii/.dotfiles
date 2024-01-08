@@ -1,7 +1,6 @@
 set $mod Mod4
 
-font pango:JetBrainsMono Nerd Font Bold 10
-
+# [[ AUTOSTART ]]
 set $lockscreen_image ~/Pictures/backgrounds/Ubuntu_Lock.png
 exec --no-startup-id dex --autostart --environment i3
 exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork -i $lockscreen_image
@@ -12,6 +11,11 @@ exec --no-startup-id nm-applet &
 exec --no-startup-id blueman-applet &
 exec --no-startup-id cbatticon -l 20 -r 10 -c "systemctl suspend"  &
 
+exec flatpak run com.bitwarden.desktop
+for_window [class="Bitwarden"] , move scratchpad
+bindsym $mod+p [class="Bitwarden"] scratchpad show
+
+# [[ SYS KEYBINDS ]]
 set $refresh_i3status killall -SIGUSR1 i3status
 bindsym XF86AudioRaiseVolume  exec --no-startup-id volume_brightness.sh volume_up       && $refresh_i3status
 bindsym XF86AudioLowerVolume  exec --no-startup-id volume_brightness.sh volume_down     && $refresh_i3status
@@ -20,15 +24,12 @@ bindsym XF86AudioMicMute      exec --no-startup-id volume_brightness.sh mic_mute
 bindsym XF86MonBrightnessUp   exec --no-startup-id volume_brightness.sh brightness_up   && $refresh_i3status
 bindsym XF86MonBrightnessDown exec --no-startup-id volume_brightness.sh brightness_down && $refresh_i3status
 
-# Use Mouse+$mod to drag floating windows to their wanted position
-floating_modifier $mod
-tiling_drag modifier titlebar
-
-# launch commands
-bindsym $mod+space exec --no-startup-id "rofi -modi drun,run -show drun"
+# [[ LAUNCH KEYBINDS ]]
+bindsym $mod+space      exec --no-startup-id "rofi -modi drun,run -show drun"
 bindsym $mod+Return     exec i3-sensible-terminal
 bindsym $mod+b          exec firefox
 
+# [[ WINDOW MANAGEMENT ]]
 # kill focused window
 bindsym $mod+w kill
 
@@ -68,6 +69,7 @@ bindsym $mod+Control+Down resize grow height 10 px or 10 ppt
 bindsym $mod+Control+Up resize shrink height 10 px or 10 ppt
 bindsym $mod+Control+Right resize grow width 10 px or 10 ppt
 
+# [[ WINDOW LAYOUT ]]
 # split in horizontal orientation
 bindsym $mod+h split h
 # split in vertical orientation
@@ -81,6 +83,10 @@ bindsym $mod+e layout toggle split
 bindsym $mod+r layout stacking
 bindsym $mod+t layout tabbed
 
+# Use Mouse+$mod to drag floating windows to their wanted position
+floating_modifier $mod
+tiling_drag modifier titlebar
+
 # toggle tiling / floating
 bindsym $mod+Shift+f floating toggle
 # change focus between tiling / floating windows
@@ -88,6 +94,7 @@ bindsym $mod+Tab focus mode_toggle
 # focus the parent container
 bindsym $mod+a focus parent
 
+# [[ WORKSPACES ]]
 # Define names for default workspaces for which we configure key bindings later on.
 set $ws1 "1"
 set $ws2 "2"
@@ -126,11 +133,16 @@ bindsym $mod+Shift+9 move container to workspace number $ws9
 bindsym $mod+Shift+0 move container to workspace number $ws10
 bindsym $mod+Shift+minus move scratchpad
 
+# [[ SUSPEND ETC. ]]
 bindsym $mod+Shift+c reload
 bindsym $mod+Shift+r restart
 
 bindsym $mod+Shift+q exec --no-startup-id i3-msg exit 
 bindsym $mod+Shift+w exec --no-startup-id systemctl suspend
+
+# [[ CUSTOMIZATION ]]
+
+font pango:JetBrainsMono Nerd Font Bold 10
 
 # class                 border  backgr. text    indic   child_border
 client.focused          #ebdbb2 #282828 #fbf1c7 #ebdbb2 #ebdbb2
