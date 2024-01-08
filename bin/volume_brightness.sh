@@ -1,8 +1,8 @@
 #!/bin/bash
 
 # See README.md for usage instructions
-volume_step=5
-brightness_step=5
+volume_step=2
+brightness_step=2
 max_volume=1.0
 notification_timeout=1000
 
@@ -106,13 +106,13 @@ case $1 in
 
     brightness_up)
     # Increases brightness and displays the notification
-    brightnessctl set +2% -n 1 -q
+    brightnessctl set +${volume_step}% -n 1 -q
     brightness_notification
     ;;
 
     brightness_down)
     # Decreases brightness and displays the notification
-    brightnessctl set 2%- -n 1 -q
+    brightnessctl set ${volume_step}%- -n 1 -q
     brightness_notification
     ;;
 esac

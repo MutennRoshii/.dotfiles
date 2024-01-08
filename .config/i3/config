@@ -58,6 +58,18 @@ bindsym $mod+Shift+Down move down
 bindsym $mod+Shift+Up move up
 bindsym $mod+Shift+Right move right
 
+# resize focused window
+bindsym $mod+Control+j resize shrink width 10 px or 10 ppt
+bindsym $mod+Control+k resize grow height 10 px or 10 ppt
+bindsym $mod+Control+l resize shrink height 10 px or 10 ppt
+bindsym $mod+Control+semicolon resize grow width 10 px or 10 ppt
+
+# alternatively, you can use the cursor keys:
+bindsym $mod+Control+Left resize shrink width 10 px or 10 ppt
+bindsym $mod+Control+Down resize grow height 10 px or 10 ppt
+bindsym $mod+Control+Up resize shrink height 10 px or 10 ppt
+bindsym $mod+Control+Right resize grow width 10 px or 10 ppt
+
 # split in horizontal orientation
 bindsym $mod+h split h
 # split in vertical orientation
@@ -67,9 +79,9 @@ bindsym $mod+v split v
 bindsym $mod+f fullscreen toggle
 
 # change container layout (stacked, tabbed, toggle split)
-bindsym $mod+s layout stacking
-bindsym $mod+t layout tabbed
 bindsym $mod+e layout toggle split
+bindsym $mod+r layout stacking
+bindsym $mod+t layout tabbed
 
 # toggle tiling / floating
 bindsym $mod+Shift+space floating toggle
@@ -121,39 +133,16 @@ bindsym $mod+Shift+r restart
 bindsym $mod+Shift+q exec --no-startup-id i3-msg exit 
 bindsym $mod+Shift+w exec --no-startup-id systemctl suspend
 
-# resize window (you can also use the mouse for that)
-mode "resize" {
-        # These bindings trigger as soon as you enter the resize mode
-
-        bindsym j resize shrink width 10 px or 10 ppt
-        bindsym k resize grow height 10 px or 10 ppt
-        bindsym l resize shrink height 10 px or 10 ppt
-        bindsym semicolon resize grow width 10 px or 10 ppt
-
-        # same bindings, but for the arrow keys
-        bindsym Left resize shrink width 10 px or 10 ppt
-        bindsym Down resize grow height 10 px or 10 ppt
-        bindsym Up resize shrink height 10 px or 10 ppt
-        bindsym Right resize grow width 10 px or 10 ppt
-
-        # back to normal: Enter or Escape or $mod+r
-        bindsym Return mode "default"
-        bindsym Escape mode "default"
-        bindsym $mod+r mode "default"
-}
-
-bindsym $mod+r mode "resize"
-
-# class                 border  backgr. text    indicator child_border
-client.focused          #ebdbb2 #282828 #fbf1c7 #ebdbb2   #ebdbb2
-client.focused_inactive #333333 #32302f #928374 #928374   #5f676a
-client.unfocused        #333333 #32302f #928374 #928374   #222222
-client.urgent           #cc241d #fb4934 #ffffff #900000   #cc241d
-client.placeholder      #000000 #0c0c0c #ffffff #000000   #0c0c0c
+# class                 border  backgr. text    indic   child_border
+client.focused          #ebdbb2 #282828 #fbf1c7 #ebdbb2 #ebdbb2
+client.focused_inactive #333333 #32302f #928374 #928374 #5f676a
+client.unfocused        #333333 #32302f #928374 #928374 #222222
+client.urgent           #cc241d #fb4934 #ffffff #900000 #cc241d
+client.placeholder      #000000 #0c0c0c #ffffff #000000 #0c0c0c
 
 client.background       #282828
 
-default_border pixel 2
+default_border pixel 1
 
 bar {
         status_command i3status
@@ -173,6 +162,6 @@ bar {
         }
         padding 2px 0
         tray_output primary
-        tray_padding 2px
+        tray_padding 5px
         workspace_min_width 40
 }
