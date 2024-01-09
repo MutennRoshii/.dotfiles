@@ -9,9 +9,9 @@ exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork -i $locks
 # util
 exec --no-startup-id xsettingsd &
 exec --no-startup-id nitrogen --restore &
-exec --no-startup-id nm-applet &
-#exec --no-startup-id blueman-applet &
+exec --no-startup-id blueman-applet &
 exec --no-startup-id cbatticon -l 20 -r 10 -c "systemctl suspend"  &
+#exec --no-startup-id nm-applet &
 
 # apps
 exec flatpak run com.bitwarden.desktop
@@ -161,6 +161,7 @@ client.placeholder      #000000 #0c0c0c #ffffff #000000 #0c0c0c
 client.background       #282828
 
 default_border pixel 1
+smart_borders on
 
 bar {
         status_command i3status
