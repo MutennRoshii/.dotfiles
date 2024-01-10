@@ -9,3 +9,5 @@ alias tree="eza -aT   --icons --group-directories-first --git --git-ignore"
 
 alias cat="bat"
 alias vim="$HOME/.local/share/bob/nvim-bin/nvim"
+
+alias histfzf="history | fzf | cut -d ' ' -f 4- | xclip -selection clipboard"
