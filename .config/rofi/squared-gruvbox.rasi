@@ -19,8 +19,10 @@
 window {
     location:   center;
     width:      480;
+    border: 1;
 
     background-color:   @bg0;
+    border-color: @fg0;
 }
 
 inputbar {

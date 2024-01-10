@@ -194,6 +194,16 @@ require('lazy').setup({
         build = ':TSUpdate',
     },
 
+    {
+        'stevearc/oil.nvim',
+        opts = {},
+        -- Optional dependencies
+        dependencies = { "nvim-tree/nvim-web-devicons" },
+    },
+
+    'github/copilot.vim',
+    'brenoprata10/nvim-highlight-colors',
+
     require 'kickstart.plugins.autoformat',
     require 'kickstart.plugins.autopairs',
     require 'kickstart.plugins.debug',
@@ -208,6 +218,8 @@ vim.o.hlsearch = false
 -- Make line numbers default
 vim.wo.number = true
 vim.wo.relativenumber = true
+
+vim.g.copilot_assume_mapped = true
 
 -- Enable mouse mode
 vim.o.mouse = 'a'
@@ -238,6 +250,9 @@ vim.o.timeoutlen = 300
 vim.o.completeopt = 'menuone,noselect'
 
 vim.o.termguicolors = true
+vim.o.t_Co = 256
+
+require("nvim-highlight-colors").setup({})
 
 -- [[ Basic Keymaps ]]
 
@@ -245,7 +260,7 @@ vim.o.termguicolors = true
 vim.keymap.set({ 'n', 'v' }, '<Space>', '<Nop>', { silent = true })
 
 -- My keymaps
-vim.keymap.set('n', '<leader>pv', vim.cmd.Explore)
+vim.keymap.set('n', '<leader>pv', vim.cmd.Oil)
 vim.keymap.set('n', '<C-d>', '<C-d>zz')
 vim.keymap.set('n', '<C-u>', '<C-u>zz')
 vim.keymap.set('n', 'n', 'nzz')
