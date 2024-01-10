@@ -18,7 +18,6 @@ vim.opt.rtp:prepend(lazypath)
 
 -- [[ Configure plugins ]]
 require('lazy').setup({
-
     -- Git related plugins
     'tpope/vim-fugitive',
     'tpope/vim-rhubarb',
@@ -138,22 +137,21 @@ require('lazy').setup({
     },
 
     {
-        -- Theme
-        'sainnhe/gruvbox-material',
+        -- Theme GruvBox
+        'ellisonleao/gruvbox.nvim',
         priority = 1000,
         config = function()
-            vim.cmd.colorscheme 'gruvbox-material'
+            vim.cmd.colorscheme 'gruvbox'
         end,
     },
 
     {
         -- Set lualine as statusline
         'nvim-lualine/lualine.nvim',
-        -- See `:help lualine.txt`
         opts = {
             options = {
                 icons_enabled = false,
-                theme = 'gruvbox-material',
+                theme = 'gruvbox',
                 component_separators = '|',
                 section_separators = '',
             },
@@ -164,7 +162,6 @@ require('lazy').setup({
         -- Add indentation guides even on blank lines
         'lukas-reineke/indent-blankline.nvim',
         -- Enable `lukas-reineke/indent-blankline.nvim`
-        -- See `:help ibl`
         main = 'ibl',
         opts = {},
     },
@@ -178,13 +175,8 @@ require('lazy').setup({
         branch = '0.1.x',
         dependencies = {
             'nvim-lua/plenary.nvim',
-            -- Fuzzy Finder Algorithm which requires local dependencies to be built.
-            -- Only load if `make` is available. Make sure you have the system
-            -- requirements installed.
             {
                 'nvim-telescope/telescope-fzf-native.nvim',
-                -- NOTE: If you are having trouble with this installation,
-                --       refer to the README for telescope-fzf-native for more instructions.
                 build = 'make',
                 cond = function()
                     return vim.fn.executable 'make' == 1
@@ -202,17 +194,13 @@ require('lazy').setup({
         build = ':TSUpdate',
     },
 
-    {
-        'brenoprata10/nvim-highlight-colors',
-    },
-    -- Add/Configure additional "plugins" for kickstart
     require 'kickstart.plugins.autoformat',
-    -- require 'kickstart.plugins.debug',
-
-    { import = 'custom.plugins' },
+    require 'kickstart.plugins.autopairs',
+    require 'kickstart.plugins.debug',
 }, {})
 
 -- [[ Setting options ]]
+-- See `:help vim.o`
 
 -- Set highlight on search
 vim.o.hlsearch = false
@@ -224,13 +212,9 @@ vim.wo.relativenumber = true
 -- Enable mouse mode
 vim.o.mouse = 'a'
 
-vim.opt.tabstop = 4
-vim.opt.softtabstop = 4
-vim.opt.shiftwidth = 4
-vim.opt.expandtab = true
-vim.opt.smartindent = true
-
 -- Sync clipboard between OS and Neovim.
+--  Remove this option if you want your OS clipboard to remain independent.
+--  See `:help 'clipboard'`
 vim.o.clipboard = 'unnamedplus'
 
 -- Enable break indent
@@ -253,22 +237,19 @@ vim.o.timeoutlen = 300
 -- Set completeopt to have a better completion experience
 vim.o.completeopt = 'menuone,noselect'
 
--- NOTE: You should make sure your terminal supports this
 vim.o.termguicolors = true
-vim.o.t_Co = 256
 
-require("nvim-highlight-colors").setup({})
 -- [[ Basic Keymaps ]]
 
 -- Keymaps for better default experience
 vim.keymap.set({ 'n', 'v' }, '<Space>', '<Nop>', { silent = true })
 
 -- My keymaps
-vim.keymap.set("n", "<leader>pv", vim.cmd.Ex)
+vim.keymap.set('n', '<leader>pv', vim.cmd.Explore)
 vim.keymap.set('n', '<C-d>', '<C-d>zz')
 vim.keymap.set('n', '<C-u>', '<C-u>zz')
-vim.keymap.set('n', 'n', 'nzzzv')
-vim.keymap.set('n', 'N', 'Nzzzv')
+vim.keymap.set('n', 'n', 'nzz')
+vim.keymap.set('n', 'N', 'Nzz')
 
 -- Remap for dealing with word wrap
 vim.keymap.set('n', 'k', "v:count == 0 ? 'gk' : 'k'", { expr = true, silent = true })
@@ -291,6 +272,7 @@ vim.api.nvim_create_autocmd('TextYankPost', {
 })
 
 -- [[ Configure Telescope ]]
+-- See `:help telescope` and `:help telescope.setup()`
 require('telescope').setup {
     defaults = {
         mappings = {
@@ -370,15 +352,21 @@ vim.keymap.set('n', '<leader>sd', require('telescope.builtin').diagnostics, { de
 vim.keymap.set('n', '<leader>sr', require('telescope.builtin').resume, { desc = '[S]earch [R]esume' })
 
 -- [[ Configure Treesitter ]]
+-- See `:help nvim-treesitter`
 -- Defer Treesitter setup after first render to improve startup time of 'nvim {filename}'
 vim.defer_fn(function()
     require('nvim-treesitter.configs').setup {
         -- Add languages to be installed here that you want installed for treesitter
-        ensure_installed = { 'c', 'cpp', 'go', 'lua', 'python', 'java', 'rust', 'tsx', 'javascript', 'typescript', 'vimdoc', 'vim', 'bash' },
+        ensure_installed = { 'c', 'cpp', 'go', 'lua', 'python', 'rust', 'tsx', 'javascript', 'typescript', 'vimdoc', 'vim', 'bash' },
 
         -- Autoinstall languages that are not installed. Defaults to false (but you can change for yourself!)
         auto_install = false,
-
+        -- Install languages synchronously (only applied to `ensure_installed`)
+        sync_install = false,
+        -- List of parsers to ignore installing
+        ignore_install = {},
+        -- You can specify additional Treesitter modules here: -- For example: -- playground = {--enable = true,-- },
+        modules = {},
         highlight = { enable = true },
         indent = { enable = true },
         incremental_selection = {
@@ -440,8 +428,8 @@ end, 0)
 -- [[ Configure LSP ]]
 --  This function gets run when an LSP connects to a particular buffer.
 local on_attach = function(_, bufnr)
-    -- Function that lets us more easily define mappings specific for LSP related items.
-    -- It sets the mode, buffer and description for us each time.
+    -- A function that lets us more easily define mappings specific
+    -- for LSP related items. It sets the mode, buffer and description for us each time.
     local nmap = function(keys, func, desc)
         if desc then
             desc = 'LSP: ' .. desc
@@ -501,14 +489,13 @@ require('which-key').register({
 require('mason').setup()
 require('mason-lspconfig').setup()
 
--- Enable the following language servers
 local servers = {
-    -- clangd = {},
+    clangd = {},
     -- gopls = {},
     pyright = {},
     rust_analyzer = {},
     tsserver = {},
-    -- html = { filetypes = { 'html', 'twig', 'hbs'} },
+    html = { filetypes = { 'html', 'twig', 'hbs' } },
 
     lua_ls = {
         Lua = {
@@ -595,3 +582,6 @@ cmp.setup {
         { name = 'path' },
     },
 }
+
+-- The line beneath this is called `modeline`. See `:help modeline`
+-- vim: ts=4 sts=4 sw=4 et

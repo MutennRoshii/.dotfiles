@@ -11,15 +11,17 @@ exec --no-startup-id xsettingsd &
 exec --no-startup-id nitrogen --restore &
 exec --no-startup-id blueman-applet &
 exec --no-startup-id cbatticon -l 20 -r 10 -c "systemctl suspend"  &
+exec --no-startup-id greenclip daemon &
 #exec --no-startup-id nm-applet &
 
 # apps
 exec flatpak run com.bitwarden.desktop
-for_window [class="Bitwarden"] , move scratchpad
 bindsym $mod+p [class="Bitwarden"] scratchpad show
 
 # [[ WINDOW RULES ]]
+for_window [class="Bitwarden"] move scratchpad
 for_window [class="gnome-calculator"] floating enable
+for_window [window_role="PictureInPicture"] sticky enable
 
 # [[ SYS KEYBINDS ]]
 set $refresh_i3status killall -SIGUSR1 i3status
@@ -32,6 +34,7 @@ bindsym XF86MonBrightnessDown exec --no-startup-id volume_brightness.sh brightne
 
 # [[ LAUNCH KEYBINDS ]]
 bindsym $mod+space      exec --no-startup-id "rofi -modi drun,run -show drun"
+bindsym $mod+Shift+v    exec --no-startup-id "rofi -modi 'clipboard:greenclip print' -show clipboard -run-command '{cmd}'"
 bindsym $mod+Return     exec i3-sensible-terminal
 bindsym $mod+b          exec firefox
 
