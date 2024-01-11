@@ -11,3 +11,14 @@ alias cat="bat"
 alias vim="$HOME/.local/share/bob/nvim-bin/nvim"
 
 alias histfzf="history | fzf | cut -d ' ' -f 4- | xclip -selection clipboard"
+
+alias gs='git status'
+alias ga='git add'
+alias gps='git push'
+alias gpu='git pull'
+alias gb='git branch '
+alias gc='git commit'
+alias gd='git diff'
+alias gco='git checkout '
+alias gl='git log'
+alias glo='git log --graph --oneline --decorate'
