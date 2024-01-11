@@ -29,8 +29,19 @@ cp -rsf $dotfiles/.config/. ~/.config/
 ### Installing native packages using nala
 
 ```bash
+sudo nala install \
+alacritty lxappearance btop nitrogen papirus-icon-theme pavucontrol i3 rofi zathura \
+blueman cbatticon brightnessctl redshift-gtk lxappearance nitrogen \
+git curl fzf imagemagick lua5.4 ruby ruby-dev xclip xsettingsd \
+build-essential cmake libbz2-dev libffi-dev liblzma-dev libncurses-dev libreadline-dev \
+libsqlite3-dev libssl-dev libxml2-dev libxmlsec1-dev tk-dev zlib1g-dev
+```
 
-sudo nala install alacritty blueman build-essential cmake curl fzf git gnome-software gnome-tweaks i3 libbz2-dev libffi-dev liblzma-dev libncurses-dev libreadline-dev libsqlite3-dev libssl-dev libxml2-dev libxmlsec1-dev lxappearance nitrogen papirus-icon-theme pasystray rofi tk-dev zlib1g-dev
+### Setting up gestures
+
+```bash
+sudo gem install fusuma 
+sudo gem install fusuma-plugin-sendkey
 ```
 
 ### Installing lovely rust tools
@@ -40,7 +51,9 @@ curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
 
 cargo install sccache
 
-RUSTC_WRAPPER=sccache cargo install mise bob-nvim cargo-info du-dust eza fd-find ripgrep sccache starship tealdeer
+RUSTC_WRAPPER=sccache cargo install \
+mise bob-nvim cargo-info bat cargo-watch \
+du-dust eza fd-find ripgrep starship tealdeer
 ```
 
 ### Installing tools with mise & bob
@@ -102,17 +115,6 @@ sudo apt update && sudo nala update
 sudo nala install -t 'o=LP-PPA-mozillateam' firefox
 ```
 
-### Installing glow
-
-```bash
-sudo mkdir -p /etc/apt/keyrings
-curl -fsSL https://repo.charm.sh/apt/gpg.key | sudo gpg --dearmor -o /etc/apt/keyrings/charm.gpg
-echo "deb [signed-by=/etc/apt/keyrings/charm.gpg] https://repo.charm.sh/apt/ * *" | sudo tee /etc/apt/sources.list.d/charm.list
-
-sudo apt update && sudo nala update
-sudo nala install glow
-```
-
 ### Sudoers
 
 ```bash
@@ -142,25 +144,13 @@ mv ./*.ttf ./'JetBrainsMono Nerd Font'/
 sudo mv ./JetBrainsMonoNerdFont/ /usr/share/fonts/
 ```
 
-### Grub
-
-> Don't change grub font. When gpu isn't loaded yet, the fonts don't render very well.
-
-```bash
-sudo grub-mkfont -s 18 -o /boot/grub/iosevka-18.pf2 /usr/share/fonts/Iosevka/Iosevka-Regular.ttf
-
-sudo cp /etc/default/grub /etc/default/grub.bak
-echo "GRUB_FONT=/boot/grub/iosevka-18.pf2" | sudo tee -a /etc/default/grub
-
-sudo grub-mkconfig -o /boot/efi/EFI/ubuntu/grub.cfg
-```
-
 ### Icons
 
 ```bash
 sudo add-apt-repository ppa:papirus/papirus
 sudo apt update && sudo nala update
 sudo nala install papirus-icon-theme
+papirus-folders -C bluegrey --theme Papirus-Dark 
 ```
 
 ## Modified system files
