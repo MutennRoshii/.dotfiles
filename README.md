@@ -44,6 +44,13 @@ sudo gem install fusuma
 sudo gem install fusuma-plugin-sendkey
 ```
 
+### Installing clipboard
+
+```bash
+wget https://github.com/erebe/greenclip/releases/download/v4.2/greenclip -P ~/.local/bin
+chmod +x ~/.local/bin/greenclip
+```
+
 ### Installing lovely rust tools
 
 ```bash
