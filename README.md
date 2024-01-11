@@ -31,7 +31,7 @@ cp -rsf $dotfiles/.config/. ~/.config/
 ```bash
 sudo nala install \
 alacritty lxappearance btop nitrogen papirus-icon-theme pavucontrol i3 rofi zathura \
-blueman cbatticon brightnessctl redshift-gtk lxappearance nitrogen \
+blueman cbatticon brightnessctl redshift-gtk lxappearance nitrogen flameshot\
 git curl fzf imagemagick lua5.4 ruby ruby-dev xclip xsettingsd \
 build-essential cmake libbz2-dev libffi-dev liblzma-dev libncurses-dev libreadline-dev \
 libsqlite3-dev libssl-dev libxml2-dev libxmlsec1-dev tk-dev zlib1g-dev

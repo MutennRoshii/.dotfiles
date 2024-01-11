@@ -30,3 +30,4 @@ export TERMINAL="alacritty"
 export BROWSER="firefox"
 
 export GTK_THEME="Yaru-bark-dark"
+export QT_STYLE_OVERRIDE="Adwaita-dark"
