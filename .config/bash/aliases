@@ -14,7 +14,7 @@ alias histfzf="history | fzf | cut -d ' ' -f 4- | xclip -selection clipboard"
 
 alias gs='git status'
 alias ga='git add'
-alias gps='git push'
+alias gp='git push'
 alias gpu='git pull'
 alias gb='git branch '
 alias gc='git commit'
