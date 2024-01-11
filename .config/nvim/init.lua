@@ -137,11 +137,22 @@ require('lazy').setup({
     },
 
     {
-        -- Theme GruvBox
-        'ellisonleao/gruvbox.nvim',
+        -- Theme kanagawa
+        'rebelot/kanagawa.nvim',
         priority = 1000,
-        config = function()
-            vim.cmd.colorscheme 'gruvbox'
+        lazy = false,
+        opts = {
+            colors = {
+                theme = {
+                    all = {
+                        ui = { bg_gutter = "none" }
+                    }
+                }
+            }
+        },
+        config = function(_, opts)
+            require('kanagawa').setup(opts)
+            vim.cmd.colorscheme 'kanagawa-dragon'
         end,
     },
 
@@ -151,7 +162,7 @@ require('lazy').setup({
         opts = {
             options = {
                 icons_enabled = false,
-                theme = 'gruvbox',
+                theme = 'kanagawa',
                 component_separators = '|',
                 section_separators = '',
             },

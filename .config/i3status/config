@@ -2,9 +2,9 @@ general {
         output_format = "i3bar"
         colors = true
         interval = 5
-        color_good = "#689d6a"
-        color_degraded = "#d65d0e"
-        color_bad = "#cc241d"
+        color_good = "#2ac3a2"
+        color_degraded = "#e27f2e"
+        color_bad = "#810220"
         markup = "pango"
 }
 
@@ -15,7 +15,7 @@ order += "tztime local"
 
 battery all {
         format = "%status %percentage"
-        format = "<span color='#83c07c'><span size='large'>%status</span>%percentage</span>"
+        format = "<span color='#2ac3a2'><span size='large'>%status</span>%percentage</span>"
         format_down = " "
         status_chr = "󰂊 "
         status_bat = " "
@@ -27,15 +27,15 @@ battery all {
 }
 
 disk "/" {
-        format = "<span color='#d3869b'><span size='large'> </span>%avail</span>"
+        format = "<span color='#e46876'><span size='large'> </span>%avail</span>"
 }
 
 memory {
-        format = "<span color='#83a598'><span size='large'> </span>%used</span>"
+        format = "<span color='#87a987'><span size='large'> </span>%used</span>"
         threshold_degraded = "1G"
         format_degraded = "MEMORY < %available"
 }
 
 tztime local {
-        format = "<span color='#d8a657'><span size='large'> </span>%d/%m %H:%M</span>"
+        format = "<span color='#7fb4ca'><span size='large'> </span>%d/%m %H:%M</span>"
 }

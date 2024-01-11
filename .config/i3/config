@@ -158,14 +158,53 @@ bindsym $mod+Shift+w exec --no-startup-id systemctl suspend
 
 font pango:JetBrainsMono Nerd Font Bold 10
 
-# class                 border  backgr. text    indic   child_border
-client.focused          #ebdbb2 #282828 #fbf1c7 #ebdbb2 #ebdbb2
-client.focused_inactive #333333 #32302f #928374 #928374 #5f676a
-client.unfocused        #333333 #32302f #928374 #928374 #222222
-client.urgent           #cc241d #fb4934 #ffffff #900000 #cc241d
-client.placeholder      #000000 #0c0c0c #ffffff #000000 #0c0c0c
+# colors
 
-client.background       #282828
+set $light05  #fbfbfe
+set $light10  #f9f9fb
+set $light20  #f0f0f4
+set $light30  #e0e0e6
+set $light40  #cfcfd8
+set $light50  #bfbfc9
+
+set $dark05   #5b5b66
+set $dark10   #52525e
+set $dark30   #42414d
+set $dark40   #3a3944
+set $dark60   #2b2a33
+set $dark80   #1c1b22
+set $dark90   #15141a
+
+set $violet20 #cb9eff
+set $violet40 #ab71ff
+set $violet50 #9059ff
+set $violet60 #7542e4
+set $violet70 #592acb
+
+set $red05    #ffdfe7
+set $red10    #ffbdc5
+set $red20    #ff9aa2
+set $red60    #e22850
+set $red70    #c50042
+set $red80    #810220
+
+set $green20  #b3ffe3
+set $green40  #54ffbd
+set $green60  #2ac3a2
+
+set $yellow20 #ffea80
+set $yellow40 #ffbd4f
+set $yellow50 #ffa436
+set $yellow60 #e27f2e
+
+# class                 border   backgr.  text     indic    child_border
+client.focused          $light30 $dark80  $light05 $light30 $light30
+client.focused_inactive $dark30  $dark80  $light40 $dark30  $dark30
+client.unfocused        $dark30  $dark80  $light40 $dark30  $dark30
+client.urgent           $red80   $red60   $light05 $red80   $red80
+client.placeholder      $light30 $dark80  $light40 $light30 $light30
+
+client.background       $dark60
 
 default_border pixel 1
 smart_borders on
@@ -175,16 +214,16 @@ bar {
         font pango:JetBrainsMono Nerd Font Bold 11
         separator_symbol " "
         colors {
-                background #121416
-                statusline #ebdbb2
-                separator  #ebdbb2
+                background $dark90
+                statusline $light05
+                separator  $light05
 
                 # class            border  bg      fg
-                focused_workspace  #ebdbb2 #ebdbb2 #32302f
-                active_workspace   #d5c4a1 #d5c4a1 #32302f
-                inactive_workspace #928374 #928374 #32302f
-                urgent_workspace   #fb4934 #fb4934 #ebdbb2
-                binding_mode       #fb4934 #fb4934 #ebdbb2
+                focused_workspace  $light30 $light30 $dark80
+                active_workspace   $light40 $light40 $dark80
+                inactive_workspace $dark05  $dark05  $light40
+                urgent_workspace   $red60   $red60   $light05
+                binding_mode       $red60   $red60   $light05
         }
         padding 2px 0
         tray_output primary
