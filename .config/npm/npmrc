@@ -1,0 +1,4 @@
+# userconfig=/home/user/.config/npm/npmrc
+prefix=/home/user/.local/share/npm
+cache=/home/user/.cache/npm
+init-module=/home/user/.config/npm/npm-init.js
