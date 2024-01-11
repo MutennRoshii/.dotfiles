@@ -175,27 +175,9 @@ set $dark60   #2b2a33
 set $dark80   #1c1b22
 set $dark90   #15141a
 
-set $violet20 #cb9eff
-set $violet40 #ab71ff
-set $violet50 #9059ff
-set $violet60 #7542e4
-set $violet70 #592acb
-
-set $red05    #ffdfe7
-set $red10    #ffbdc5
-set $red20    #ff9aa2
 set $red60    #e22850
 set $red70    #c50042
 set $red80    #810220
-
-set $green20  #b3ffe3
-set $green40  #54ffbd
-set $green60  #2ac3a2
-
-set $yellow20 #ffea80
-set $yellow40 #ffbd4f
-set $yellow50 #ffa436
-set $yellow60 #e27f2e
 
 # class                 border   backgr.  text     indic    child_border
 client.focused          $light30 $dark80  $light05 $light30 $light30
@@ -218,8 +200,8 @@ bar {
                 statusline $light05
                 separator  $light05
 
-                # class            border  bg      fg
-                focused_workspace  $light30 $light30 $dark80
+                # class            border   bg      fg
+                focused_workspace  $light40 $light40 $dark80
                 active_workspace   $light40 $light40 $dark80
                 inactive_workspace $dark05  $dark05  $light40
                 urgent_workspace   $red60   $red60   $light05

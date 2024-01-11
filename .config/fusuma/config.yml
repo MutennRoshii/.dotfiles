@@ -10,10 +10,10 @@ swipe:
       command: exec i3 focus up
   4:
     left:
-      command: exec /home/user/.config/fusuma/swipe-workspace.sh next
+      command: exec swipe-workspace.sh next
       swipe: 1.5
     right:
-      command: exec /home/user/.config/fusuma/swipe-workspace.sh prev
+      command: exec swipe-workspace.sh prev
       swipe: 1.5
     up:
       command: exec i3 fullscreen toggle
