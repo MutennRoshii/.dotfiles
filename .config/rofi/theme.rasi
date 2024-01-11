@@ -1,12 +1,12 @@
 * {
     font:   "JetBrainsMono Nerd Font Medium 12";
 
-    bg0:     #1d2021;
-    bg1:     #282828;
-    fg0:     #D3C6AA;
+    bg0:     #1c1b22;
+    bg1:     #2b2a33;
+    fg0:     #cfcfd8;
 
-    accent-color:     #d4be98;
-    urgent-color:     #DBBC7F;
+    accent-color:     #cfcfd8;
+    urgent-color:     #e22850;
 
     background-color:   transparent;
     text-color:         @fg0;

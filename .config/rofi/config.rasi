@@ -2,5 +2,5 @@ configuration {
     show-icons: true;
 }
 
-@theme "./squared-gruvbox.rasi"
+@theme "./theme.rasi"
 

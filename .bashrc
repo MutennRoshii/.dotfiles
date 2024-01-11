@@ -41,4 +41,4 @@ source "/home/user/.local/share/cargo/env"
 
 eval "$(~/.local/share/cargo/bin/mise activate bash)"
 eval "$(starship init bash)"
-
+fastfetch 
