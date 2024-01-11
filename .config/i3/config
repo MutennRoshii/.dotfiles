@@ -12,6 +12,7 @@ exec --no-startup-id nitrogen --restore &
 exec --no-startup-id blueman-applet &
 exec --no-startup-id cbatticon -l 20 -r 10 -c "systemctl suspend"  &
 exec --no-startup-id greenclip daemon &
+exec --no-startup-id fusuma -d &
 #exec --no-startup-id nm-applet &
 
 # apps

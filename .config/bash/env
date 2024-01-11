@@ -16,6 +16,8 @@ export CARGO_HOME="$XDG_DATA_HOME/cargo"
 export HISTFILE="$XDG_STATE_HOME/bash/history"
 export LESSHISTFILE="$XDG_STATE_HOME/less/history"
 export GTK2_RC_FILES="$XDG_CONFIG_HOME/gtk-2.0/gtkrc"
+export NPM_CONFIG_USERCONFIG="$XDG_CONFIG_HOME/npm/npmrc"
+export GOPATH="$XDG_DATA_HOME/go"
 
 export PATH="$PATH\
 :/usr/local/go/bin\
