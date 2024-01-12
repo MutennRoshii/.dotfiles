@@ -8,6 +8,7 @@ exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork -i $locks
 
 # util
 exec --no-startup-id xsettingsd &
+exec --no-startup-id /usr/lib/polkit-1/polkit-agent-helper-1 &
 exec --no-startup-id nitrogen --restore &
 exec --no-startup-id blueman-applet &
 exec --no-startup-id cbatticon -l 20 -r 10 -c "systemctl suspend"  &
