@@ -37,7 +37,7 @@ if [ -f "$HOME/.config/bash/functions" ]; then
     source "$HOME/.config/bash/functions"
 fi
 
-source "/home/user/.local/share/cargo/env"
+source "$HOME/.local/share/cargo/env"
 
 eval "$(~/.local/share/cargo/bin/mise activate bash)"
 eval "$(starship init bash)"

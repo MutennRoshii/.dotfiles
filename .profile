@@ -23,4 +23,4 @@ if [ -f "$HOME/.config/bash/env" ]; then
     source "$HOME/.config/bash/env"
 fi
 
-source "/home/user/.local/share/cargo/env"
+source "$HOME/.local/share/cargo/env"
