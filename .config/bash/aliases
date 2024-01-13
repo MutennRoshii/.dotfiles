@@ -10,8 +10,13 @@ alias tree="eza -aT   --icons --group-directories-first --git --git-ignore"
 alias cat="bat"
 alias vim="$HOME/.local/share/bob/nvim-bin/nvim"
 
+alias update-dots="cp -rsf ~/.dotfiles/.config/. ~/.config/"
+
 alias hist="history | fzf | cut -d ' ' -f 4- | xclip -selection clipboard"
 alias cd..="cd .."
+alias ..="cd .."
+alias ...="cd ../.."
+alias ....="cd ../../.."
 
 alias gs='git status'
 alias ga='git add'

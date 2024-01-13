@@ -60,7 +60,8 @@ return {
 
         local servers = {
             clangd = {},
-            -- gopls = {},
+            jdtls = {},
+            gopls = {},
             pyright = {},
             rust_analyzer = {},
             tsserver = {},
