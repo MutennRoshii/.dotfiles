@@ -12,5 +12,6 @@ spec("user.plugins.telescope")
 spec("user.plugins.java")
 spec("user.plugins.lsp")
 spec("user.plugins.cmp")
+spec("user.plugins.debug")
 
 require("user.lazy")
