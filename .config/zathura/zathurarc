@@ -1,43 +1,47 @@
 set font                        "JetBrainsMono Nerd Font 12"
 
-# [[ Colours ]]
-set notification-error-bg       "#1d2021" # bg
-set notification-error-fg       "#fb4934" # bright:red
-set notification-warning-bg     "#1d2021" # bg
-set notification-warning-fg     "#fabd2f" # bright:yellow
-set notification-bg             "#1d2021" # bg
-set notification-fg             "#b8bb26" # bright:green
+set window-title-basename "true"
+set selection-clipboard "clipboard"
 
-set completion-bg               "#504945" # bg2
-set completion-fg               "#ebdbb2" # fg
-set completion-group-bg         "#3c3836" # bg1
-set completion-group-fg         "#928374" # gray
-set completion-highlight-bg     "#83a598" # bright:blue
-set completion-highlight-fg     "#504945" # bg2
+set notification-error-fg       "#dcd7ba"
+set notification-warning-fg     "#44475a"
+set notification-bg             "#1f1f28"
+set notification-fg             "#dcd7ba"
 
-# Define the color in index mode
-set index-bg                    "#504945" # bg2
-set index-fg                    "#ebdbb2" # fg
-set index-active-bg             "#83a598" # bright:blue
-set index-active-fg             "#504945" # bg2
+set completion-bg               "#1f1f28"
+set completion-group-bg         "#1f1f28"
+set completion-highlight-bg     "#44475a"
+set completion-highlight-fg     "#dcd7ba"
 
-set inputbar-bg                 "#1d2021" # bg
-set inputbar-fg                 "#ebdbb2" # fg
+set index-bg                    "#1f1f28"
+set index-fg                    "#dcd7ba"
+set index-active-fg             "#dcd7ba"
 
-set statusbar-bg                "#504945" # bg2
-set statusbar-fg                "#ebdbb2" # fg
+set inputbar-bg                 "#1f1f28"
+set inputbar-fg                 "#dcd7ba"
+set statusbar-bg                "#1f1f28"
+set statusbar-fg                "#dcd7ba"
 
-set highlight-color             "#fabd2f" # bright:yellow
-set highlight-active-color      "#fe8019" # bright:orange
+set highlight-color             "#2d4f67"
+set highlight-active-color      "#dcd7ba"
 
-set default-bg                  "#1d2021" # bg
-set default-fg                  "#ebdbb2" # fg
+set default-bg                  "#1f1f28"
+set default-fg                  "#dcd7ba"
+
 set render-loading              true
-set render-loading-bg           "#1d2021" # bg
-set render-loading-fg           "#ebdbb2" # fg
+set render-loading-fg           "#1f1f28"
+set render-loading-bg           "#dcd7ba"
 
-# Recolor book content's color
-set recolor-lightcolor          "#1d2021" # bg
-set recolor-darkcolor           "#ebdbb2" # fg
-set recolor                     "true"
-# set recolor-keephue             true      # keep original color
+#
+# Recolor mode settings
+#
+
+set recolor-lightcolor          "#1f1f28"
+set recolor-darkcolor           "#dcd7ba"
+
+#
+# Startup options
+#
+set adjust-open width
+set recolor true
+

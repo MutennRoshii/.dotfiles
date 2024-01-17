@@ -1,10 +1,10 @@
 #!/bin/bash
 # ~/.config/bash/aliases
 
-alias    l="eza       --group-directories-first --git"
-alias   ls="eza -lah  --icons --group-directories-first --git"
-alias   ll="eza -lah  --icons --group-directories-first --git"
-alias   ld="eza -lahD --icons --group-directories-first --git"
+alias l="eza       --group-directories-first --git"
+alias ls="eza -lh  --icons --group-directories-first --git"
+alias ll="eza -lah  --icons --group-directories-first --git"
+alias ld="eza -lahD --icons --group-directories-first --git"
 alias tree="eza -aT   --icons --group-directories-first --git --git-ignore"
 
 alias cat="bat"
