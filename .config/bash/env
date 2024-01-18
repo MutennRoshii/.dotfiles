@@ -27,7 +27,7 @@ export PATH="$PATH:/usr/local/go/bin\
 export MANPAGER="sh -c 'col -bx | bat -l man -p'"
 export EDITOR="$XDG_DATA_HOME/bob/nvim-bin/nvim"
 export TERMINAL="alacritty"
-export BROWSER="org.mozilla.firefox.desktop"
+export BROWSER="one.ablaze.floorp.desktop"
 
 export GTK_THEME="Yaru-bark-dark"
 export QT_STYLE_OVERRIDE="Adwaita-dark"
