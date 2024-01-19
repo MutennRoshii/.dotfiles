@@ -37,5 +37,5 @@ memory {
 }
 
 tztime local {
-        format = "<span color='#7fb4ca'><span size='large'> </span>%d/%m %H:%M</span>"
+        format = "<span color='#7fb4ca'><span size='large'> </span>%d/%m %H:%M </span>"
 }
