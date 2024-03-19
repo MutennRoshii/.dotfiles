@@ -2,11 +2,13 @@ window:
   padding:
     x: 5
     y: 5
+  opacity: 0.96
+  #opacity: 1.00
 
 font:
   normal:
     family: 'JetBrainsMono Nerd Font'
-  size: 13
+  size: 12
 
 # Kanagawa Dragon Alacritty Colors
 colors:
@@ -41,29 +43,3 @@ colors:
   indexed_colors:
     - { index: 16, color: '#b6927b' }
     - { index: 17, color: '#b98d7b' }
-
-# Gruvbox theme
-# colors:
-#   primary:
-#     background: '#282828'
-#     foreground: '#dfbf8e'
-#
-#   normal:
-#     black: '#665c54'
-#     red: '#ea6962'
-#     green: '#a9b665'
-#     yellow: '#e78a4e'
-#     blue: '#7daea3'
-#     magenta: '#d3869b'
-#     cyan: '#89b482'
-#     white: '#dfbf8e'
-#
-#   bright:
-#     black: '#928374'
-#     red: '#ea6962'
-#     green: '#a9b665'
-#     yellow: '#e3a84e'
-#     blue: '#7daea3'
-#     magenta: '#d3869b'
-#     cyan: '#89b482'
-#     white: '#dfbf8e'

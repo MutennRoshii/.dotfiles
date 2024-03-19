@@ -23,4 +23,8 @@ if [ -f "$HOME/.config/bash/env" ]; then
     source "$HOME/.config/bash/env"
 fi
 
+if [ -d "$HOME/.local/opt/flutter" ]; then
+    export PATH="$HOME/.local/opt/flutter/bin:$PATH"
+fi
+
 source "$HOME/.local/share/cargo/env"
